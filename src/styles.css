@@ -122,4 +122,9 @@ a:hover {
 img.socialIcon {
   height: 30px;
   width: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+img.socialIcon:hover {
+  transform: scale(1.2) rotate(-15deg);
 }
