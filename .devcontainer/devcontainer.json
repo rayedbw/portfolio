@@ -2,9 +2,9 @@
 // https://github.com/devcontainers/images/tree/main/src/javascript-node
 {
   "name": "JavaScript Portfolio Site with GitHub Codespaces",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/universal:3-noble",
   "hostRequirements": {
-    "cpus": 4
+    "cpus": 2
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "npm install",
