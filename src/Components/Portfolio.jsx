@@ -58,36 +58,91 @@ const projectList = [
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          paddingTop: "3rem",
-        }}
-      >
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{
-              height: "90%",
-              width: "100%",
-              objectFit: "cover",
-              animation: "1s ease-out 0s 1 slideInLeft",
-            }}
-            alt={imageAltText}
-          />
+    <section className="padding bg-gradient-to-br from-gray-50 to-gray-100" id="portfolio">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-800 mb-4">
+            Portfolio
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+            Showcasing my recent projects and contributions to the tech community
+          </p>
         </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Image Section */}
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+            <div className="relative">
+              <img
+                src={image}
+                className="w-full h-96 object-cover rounded-2xl shadow-xl animate-slideInLeft"
+                alt={imageAltText}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
             </div>
-          ))}
+          </div>
+
+          {/* Projects Grid */}
+          <div className="space-y-6">
+            {projectList.map((project, index) => (
+              <div 
+                key={project.title} 
+                className="group relative"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 animate-fadeIn">
+                  {/* Project Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <a 
+                        href={project.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="group/link"
+                      >
+                        <h3 className="text-xl font-bold text-gray-800 group-hover/link:text-primary-600 transition-colors duration-200 mb-2 line-clamp-2">
+                          {project.title}
+                        </h3>
+                      </a>
+                    </div>
+                    
+                    {/* External link icon */}
+                    <a 
+                      href={project.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="ml-4 p-2 rounded-full bg-primary-50 hover:bg-primary-100 text-primary-600 transition-colors duration-200 group-hover:scale-110"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                  
+                  {/* Project Description */}
+                  <p className="text-gray-600 leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  {/* Hover line effect */}
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 group-hover:w-full transition-all duration-500 rounded-b-2xl"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Call to action */}
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
+            <span>View More Projects</span>
+            <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
         </div>
       </div>
     </section>

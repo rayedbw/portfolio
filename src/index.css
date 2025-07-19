@@ -21,4 +21,37 @@ body {
   width: 100%;
 }
 
-/* TailwindCSS classes will handle the rest of the styling */
+/* Custom utility classes for legacy support */
+@layer utilities {
+  .padding {
+    @apply px-6 py-20 md:px-16 lg:px-24;
+  }
+  
+  .background {
+    @apply absolute inset-0 w-full h-full object-cover -z-10;
+  }
+  
+  .min-height {
+    @apply min-h-screen relative flex items-center justify-center;
+  }
+  
+  .container {
+    @apply flex-1 ml-8 space-y-6;
+  }
+  
+  .box {
+    @apply p-4 rounded-lg bg-white bg-opacity-90 shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .large {
+    @apply text-lg leading-relaxed;
+  }
+  
+  .small {
+    @apply text-sm text-gray-600;
+  }
+  
+  .socialIcon {
+    @apply w-8 h-8 hover:scale-110 transition-transform duration-200;
+  }
+}

@@ -41,82 +41,153 @@ const Footer = (props) => {
   } = props;
 
   return (
-    <div
+    <footer
       id="footer"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "2.5rem",
-        padding: "5rem 0 3rem",
-        backgroundColor: primaryColor,
-        width: "100vw",
-      }}
+      className="relative bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 overflow-hidden"
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2.5rem",
-        }}
-      >
-        {email && (
-          <a href={`mailto:${email}`}>
-            <img src={envelopeIcon} alt="email" className="socialIcon" />
-          </a>
-        )}
-        {devDotTo && (
-          <a href={`https://dev.to/${devDotTo}`} target="_blank" rel="noopener noreferrer">
-            <img src={devDotToIcon} alt="Dev.to" className="socialIcon" />
-          </a>
-        )}
-        {gitHub && (
-          <a href={`https://github.com/${gitHub}`} target="_blank" rel="noopener noreferrer">
-            <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
-          </a>
-        )}
-        {instagram && (
-          <a
-            href={`https://www.instagram.com/${instagram}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instagramIcon} alt="Instagram" className="socialIcon" />
-          </a>
-        )}
-        {linkedIn && (
-          <a
-            href={`https://www.linkedin.com/in/${linkedIn}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
-          </a>
-        )}
-        {medium && (
-          <a href={`https://medium.com/@${medium}`} target="_blank" rel="noopener noreferrer">
-            <img src={mediumIcon} alt="Medium" className="socialIcon" />
-          </a>
-        )}
-        {twitter && (
-          <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter" className="socialIcon" />
-          </a>
-        )}
-        {youTube && (
-          <a
-            href={`https://www.youtube.com/c/${youTube}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
-          </a>
-        )}
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, white 2px, transparent 2px),
+                          radial-gradient(circle at 75% 75%, white 2px, transparent 2px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
       </div>
-      <p className="small" style={{ marginTop: 0, color: "white" }}>
-        Created by {name}
-      </p>
-    </div>
+      
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-16">
+        {/* Contact Section */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            Let's Connect
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-secondary-400 to-white mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Ready to collaborate on your next project? Let's create something amazing together.
+          </p>
+        </div>
+        
+        {/* Social Links */}
+        <div className="flex flex-wrap justify-center items-center gap-6 mb-12">
+          {email && (
+            <a 
+              href={`mailto:${email}`}
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={envelopeIcon} alt="email" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                Email
+              </div>
+            </a>
+          )}
+          {devDotTo && (
+            <a 
+              href={`https://dev.to/${devDotTo}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={devDotToIcon} alt="Dev.to" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                Dev.to
+              </div>
+            </a>
+          )}
+          {gitHub && (
+            <a 
+              href={`https://github.com/${gitHub}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={gitHubIcon} alt="GitHub" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                GitHub
+              </div>
+            </a>
+          )}
+          {instagram && (
+            <a
+              href={`https://www.instagram.com/${instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={instagramIcon} alt="Instagram" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                Instagram
+              </div>
+            </a>
+          )}
+          {linkedIn && (
+            <a
+              href={`https://www.linkedin.com/in/${linkedIn}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={linkedInIcon} alt="LinkedIn" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                LinkedIn
+              </div>
+            </a>
+          )}
+          {medium && (
+            <a 
+              href={`https://medium.com/@${medium}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={mediumIcon} alt="Medium" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                Medium
+              </div>
+            </a>
+          )}
+          {twitter && (
+            <a 
+              href={`https://twitter.com/${twitter}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={twitterIcon} alt="Twitter" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                Twitter
+              </div>
+            </a>
+          )}
+          {youTube && (
+            <a
+              href={`https://www.youtube.com/c/${youTube}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 bg-white/10 hover:bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            >
+              <img src={youTubeIcon} alt="YouTube" className="w-6 h-6 filter brightness-0 invert" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                YouTube
+              </div>
+            </a>
+          )}
+        </div>
+        
+        {/* Copyright */}
+        <div className="text-center pt-8 border-t border-white/20">
+          <p className="text-white/70 text-sm">
+            © {new Date().getFullYear()} Created with ❤️ by <span className="text-white font-medium">{name}</span>
+          </p>
+          <p className="text-white/50 text-xs mt-2">
+            Built with React & TailwindCSS
+          </p>
+        </div>
+      </div>
+      
+      {/* Decorative gradient circles */}
+      <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-r from-secondary-500/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-gradient-to-l from-primary-400/20 to-transparent rounded-full blur-3xl"></div>
+    </footer>
   );
 };
 
