@@ -50,10 +50,10 @@ const detailOrQuote =
 const About = () => {
   return (
     <section className="padding relative" id="about">
-      <img className="background" src={image} alt={imageAltText} />
+      {/* <img className="background" src={image} alt={imageAltText} /> */}
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-purple-900/30 to-primary-800/40"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-purple-900/30 to-primary-800/40"></div> */}
       
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20 animate-slideUp">

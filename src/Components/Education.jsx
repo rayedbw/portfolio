@@ -36,19 +36,19 @@ const educationList = [
 const Education = () => {
   return (
     <section className="padding relative" id="education">
-      <img className="background" src={image} alt={imageAltText} />
+      {/* <img className="background" src={image} alt={imageAltText} /> */}
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-primary-900/20 to-secondary-800/30"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-primary-900/20 to-secondary-800/30"></div> */}
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-800 mb-4">
             Education
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-secondary-400 to-primary-400 mx-auto rounded-full"></div>
-          <p className="text-lg text-white/80 mt-6 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
             My educational journey and continuous learning path in technology
           </p>
         </div>
@@ -97,7 +97,7 @@ const Education = () => {
         
         {/* Additional certifications call-to-action */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-white/30 group cursor-pointer">
+          <div className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
             <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
