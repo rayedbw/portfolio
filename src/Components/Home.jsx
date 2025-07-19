@@ -36,9 +36,9 @@ const Home = ({ name, title }) => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
       
       {/* Content container */}
-      <div className="relative z-10 container mx-auto px-6 py-20 h-full flex items-center">
+      <div className="relative z-10 container mx-auto px-6 pt-24 pb-20 h-full flex items-start">
         <div className="w-full">
-          {/* Text content - positioned on right for larger screens, center for mobile */}
+          {/* Text content - positioned in top-right for larger screens, center for mobile */}
           <div className="text-right md:ml-auto md:w-2/3 lg:w-1/2 animate-fadeIn">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl border border-white/20">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 leading-tight">
