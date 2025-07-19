@@ -41,7 +41,7 @@ const Home = ({ name, title }) => {
       <div style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
         <img
           src={arrowSvg}
-          style={{ height: "3rem", width: "3rem" }}
+          style={{ height: "3rem", width: "3rem", animation: "bounce 2s infinite" }}
           alt="Arrow pointing downwards, indicating to scroll down for more content"
         />
       </div>
